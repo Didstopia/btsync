@@ -1,3 +1,5 @@
+## NOTE: This is a fork, not the official repository. The aim of this fork is to open up the Web UI on port 55556, as well as provide environment variables that control the username and the password.
+
 # tutum/btsync
 
 [![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
