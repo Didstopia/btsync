@@ -5,6 +5,9 @@ ADD http://download-lb.utorrent.com/endpoint/btsync/os/linux-x64/track/stable /u
 RUN cd /usr/bin && tar -xzvf btsync.tar.gz && rm btsync.tar.gz
 RUN mkdir -p /btsync/.sync
 EXPOSE 55555
+EXPOSE 55556
+ENV BTSYNC_USERNAME username
+ENV BTSYNC_PASSWORD password
 ADD start-btsync /usr/bin/start-btsync
 RUN chmod +x /usr/bin/start-btsync
 ENTRYPOINT ["start-btsync"] 

@@ -7,7 +7,6 @@ import json
 import tutum
 import sys
 
-
 shared_folders=[]
 if (len(sys.argv) > 1):     
     for v in sys.argv[1:]:
@@ -32,7 +31,6 @@ else:
                 'search_lan':True,
                 'use_sync_trash':False}
         shared_folders.append(folder)
- 
 
 init = {'device_name': 'Sync Container',
         'listening_port': 55555,
@@ -41,7 +39,8 @@ init = {'device_name': 'Sync Container',
         'use_upnp':False,
         'download_limit':0,
         'upload_limit':0,
-        'shared_folders':shared_folders}
+        'shared_folders':shared_folders,
+        'webui':{'listen':'0.0.0.0:55556','login':os.getenv("BTSYNC_USERNAME"),'password':os.getenv("BTSYNC_PASSWORD")}}
 
 with open('/btsync/btsync.conf', 'w') as configfile:
     json.dump(init,configfile, sort_keys=True,indent=4, separators=(',', ': '))
